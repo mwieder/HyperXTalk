@@ -17,7 +17,7 @@ You should have received a copy of the GNU General Public License
 along with LiveCode.  If not see <http://www.gnu.org/licenses/>.  */
 
 on TestSetup
-   TestLoadExtension "com.livecode.library.json"
+   TestLoadExtension "com.hyperxtalk.library.json"
 
    set the itemDelimiter to slash
    set the defaultFolder to ((item 1 to -2 of the filename of this stack) & slash & "JSONTestSuite")

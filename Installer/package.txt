@@ -427,7 +427,7 @@ component Extensions
 	into [[ToolsFolder]]/Extensions place
 		rfolder macosx:packaged_extensions/com.livecode.library.iconsvg
 	into [[ToolsFolder]]/Extensions place
-		rfolder macosx:packaged_extensions/com.livecode.library.json
+		rfolder macosx:packaged_extensions/com.hyperxtalk.library.json
 	into [[ToolsFolder]]/Extensions place
 		rfolder macosx:packaged_extensions/com.livecode.widget.navbar
 	into [[ToolsFolder]]/Extensions place

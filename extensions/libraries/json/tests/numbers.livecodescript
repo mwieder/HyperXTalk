@@ -1,7 +1,7 @@
 script "JSONLibraryNumbers"
 
 on TestSetup
-	TestLoadExtension "com.livecode.library.json"
+	TestLoadExtension "com.hyperxtalk.library.json"
 end TestSetup
 
 -- Bug 17239

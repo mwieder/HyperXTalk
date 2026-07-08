@@ -156,6 +156,13 @@ end handler
 /**
 Summary: Parse JSON text into a HyperXTalk value.
 
+Example:
+
+put "{"&quote&"hello"&auote&":"1234}" into tJSON
+put JSONImport(JSON)
+
+Parameters:
+
 pJson:   String containing JSON text
 
 Returns: The top level value.  The type depends on the JSON content.
@@ -273,6 +280,8 @@ end handler
 /**
 Summary: Format a HyperXTalk value as JSON text
 
+Parameters:
+
 pValue:  A HyperXTalk value (Array, List, String, Number, Boolean, or nothing)
 
 Returns: A string containing JSON-formatted text.
@@ -308,6 +317,8 @@ end handler
 
 /**
 Summary: Format a HyperXTalk value as JSON text
+
+Parameters:
 
 pValue:  A HyperXTalk value (Array, List, String, Number, Boolean, or nothing)
 pPretty: Boolean true to prettyprint the JSON
@@ -351,12 +362,16 @@ end handler
 /**
 Summary: pretty-prints the input JSON text
 
+Parameters:
+
 pJSON: valid JSON text string for prettyprinting.
+pNumSpaces: number of spaces to indent when prettyprinting.
+pShouldExpandBraces: boolean True to place begin and end braces on the same level
 
 Returns: a string containing JSON text prettyprinted.
 
 Description:
-The input JSON text string is returned pretty-printed.
+The input JSON text string is returned prettyprinted.
 
 Tags: JSON
 */
