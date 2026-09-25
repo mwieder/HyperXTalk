@@ -194,16 +194,19 @@ on TestClipboardImageTypes
 end TestClipboardImageTypes
 
 on TestClipboardPrivateKey
+	local tIsPresent
    set the clipboardData["private"] to "Hello World!"
 
+	put "private" is among the keys of the clipboardData into tIsPresent
+
    TestAssert "private key is present before external change", \
-      "private" is among the keys of the clipboardData
+      tIsPresent
 
    local tHelperFilename, tHelperExtension
    if the environment is "server" then
       put "lc" into tHelperExtension
    else
-      put "livecodescript" into tHelperExtension
+      put "hyperxtalkscript" into tHelperExtension
    end if
    set the itemDelimiter to slash
    put format("%s/_clipboard_private_setter." & tHelperExtension, \
@@ -216,13 +219,14 @@ on TestClipboardPrivateKey
 
    TestAssert "helper changed clipboard externally", the result is 0
    
+	put "private" is not among the keys of the clipboardData into tIsPresent
    if the platform is "Linux" then
       TestAssertBroken "private key not present after external change", \
-         "private" is not among the keys of the clipboardData, \
+         tIsPresent, \
          "Bug 19117"
    else
       TestAssert "private key not present after external change", \
-         "private" is not among the keys of the clipboardData
+         tIsPresent
    end if
 end TestClipboardPrivateKey
 
