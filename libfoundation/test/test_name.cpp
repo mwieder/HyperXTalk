@@ -23,7 +23,7 @@ TEST(name, index_equal_string)
 {
     static index_t s_test_indicies[] =
     {
-        INT32_MIN + 32,
+        INT32_MIN + 33,
         INT16_MIN,
         INT8_MIN,
         0,

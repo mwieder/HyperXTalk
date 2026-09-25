@@ -511,17 +511,21 @@ on TestEffectiveRectIsUpdatedWhileScreenIsLocked
    
    create stack "TestStack"
    put the rect of stack "TestStack" into tRectBefore
+   put the effective rect of stack "TestStack" into tEffectiveRectBefore
    lock screen
    set the top of stack "TestStack" to the top of stack "TestStack" + tTop
    set the left of stack "TestStack" to the left of stack "TestStack" + tLeft
-   put the effective rect of stack "TestStack" into tEffectiveRectBefore
    put the rect of stack "TestStack" into tRectAfter
-   unlock screen
    put the effective rect of stack "TestStack" into tEffectiveRectAfter
+   unlock screen
    add tTop to item 2 of tRectBefore
    add tTop to item 4 of tRectBefore
    add tLeft to item 1 of tRectBefore
    add tLeft to item 3 of tRectBefore
+   add tTop to item 2 of tEffectiveRectBefore
+   add tTop to item 4 of tEffectiveRectBefore
+   add tLeft to item 1 of tEffectiveRectBefore
+   add tLeft to item 3 of tEffectiveRectBefore
    TestAssert "rect of stack is updated while screen is locked", tRectBefore is tRectAfter
    TestAssert "effective rect of stack is updated while screen is locked", tEffectiveRectBefore is tEffectiveRectAfter
    delete stack "TestStack" 
