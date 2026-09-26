@@ -28,7 +28,7 @@ on TestCutVar
 	local tField
 	create field
 	put it into tField
-	set the text of tField to ("a" & return & "b")
+	set the text of tField to ("a" & cr & "b")
 	
 	local tToCut
 	put "line 1 of" && tField into tToCut
@@ -37,5 +37,5 @@ on TestCutVar
 	
 	TestAssert "cut obj text chunk in variable", the text of tField is "b"
 	TestAssert "clipboard after cut obj text chunk in variable", \ 
-		the clipboardData["text"] is ("a" & return)
+		the clipboardData["text"] is ("a" & cr)
 end TestCutVar

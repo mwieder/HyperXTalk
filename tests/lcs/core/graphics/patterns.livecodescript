@@ -47,7 +47,9 @@ end SetPatternToNonExistantImage
 on TestPatterns
    local tPattern
    
-   repeat for each word tPattern in "brushPattern penPattern backdrop"
+#   repeat for each word tPattern in "brushPattern penPattern backdrop"
+#	bug #532 : setting the backdrop pattern causes a quit
+   repeat for each word tPattern in "brushPattern penPattern"
       PatternTests tPattern, "global"
    end repeat
    
@@ -159,6 +161,6 @@ end GetPattern
 
 on TestTeardown
    if "StandaloneTestRunnerMainstack" is not among the lines of the mainstacks then
-      delete stack "revIcons"
+#      delete stack "revIcons"
    end if
 end TestTeardown

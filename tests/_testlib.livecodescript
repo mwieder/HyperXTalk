@@ -83,8 +83,8 @@ end _TestValidateDirective
 private command _TestOutput pIsOkay, pDescription, pDirective, pReason
    local tDescription, tDirective, tReason
    put _TestValidateDescription(pDescription) into tDescription
-   put _TestValidateDirective(pDirective) into tDirective
-   put _TestValidateReason(pReason) into tReason
+	put _TestValidateDirective(pDirective) into tDirective
+	put _TestValidateReason(pReason) into tReason
 
    local tMessage
    if pIsOkay then
@@ -375,7 +375,7 @@ end TestGetEngineRepositoryPath
 
 function TestGetIDERepositoryPath
   set the itemdelimiter to "/"
-  return item 1 to -3 of the filename of me & slash & "ide"
+	return TestGetEngineRepositoryPath() & slash & "ide"
 end TestGetIDERepositoryPath
 
 function TestGetExtractedDocsFolder
